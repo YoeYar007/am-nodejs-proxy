@@ -134,11 +134,11 @@ function reserve_port() {
 
 function generate_configs() {
     local port="$1"
-    local uuid="$2"
+    local uuid="b0286bc2-e17c-4c17-b0e6-d39c93f74937"
     local id="$3"
     local cloudflared_address="$4"
-    local vless_node="vless://${id}@icook.tw:443?security=tls&sni=${cloudflared_address}&alpn=h2,http/1.1&fp=chrome&type=ws&path=/&host=${cloudflared_address}&encryption=none#[pl]%20[vl-tl-ws]%20[at-ar-no]"
-    local vless_xray="vless://${uuid}@visa.com:443?security=tls&sni=${cloudflared_address}&alpn=h2,http/1.1&fp=chrome&type=ws&path=/ws?ed%3D2048&host=${cloudflared_address}&encryption=none#[pl]%20[vl-tl-ws]%20[at-ar]"
+    local vless_node="vless://${id}@alist.yoeyar.dynv6.net:443?security=tls&sni=${cloudflared_address}&alpn=h2,http/1.1&fp=chrome&type=ws&path=/&host=${cloudflared_address}&encryption=none#[pl]%20[vl-tl-ws]%20[at-ar-no]"
+    local vless_xray="vless://${uuid}@alist.yoeyar.dynv6.net:443?security=tls&sni=${cloudflared_address}&alpn=h2,http/1.1&fp=chrome&type=ws&path=/ws?ed%3D2048&host=${cloudflared_address}&encryption=none#[pl]%20[vl-tl-ws]%20[at-ar]"
 
     cat > $base_dir/node/.env << EOF
 PORT=$port
